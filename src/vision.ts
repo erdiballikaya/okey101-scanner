@@ -1,7 +1,7 @@
 // src/vision.ts
 import axios from 'axios';
 
-const VISION_API_KEY = 'AIzaSyD6bt0HCNYHQW_bXfVk-EMookFZbbRN-hY';
+const VISION_API_KEY = 'AIzaSyD6bt0HCNYHQW_bXfVk-EMookFZbbRN-hY-kal-dir';
 const VISION_URL = `https://vision.googleapis.com/v1/images:annotate?key=${VISION_API_KEY}`;
 
 export type VisionBox = {
