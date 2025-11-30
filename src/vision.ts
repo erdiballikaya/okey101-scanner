@@ -1,8 +1,16 @@
 // src/vision.ts
 import axios from 'axios';
+import Constants from "expo-constants";
 
-const VISION_API_KEY = 'AIzaSyD6bt0HCNYHQW_bXfVk-EMookFZbbRN-hY-kal-dir';
-const VISION_URL = `https://vision.googleapis.com/v1/images:annotate?key=${VISION_API_KEY}`;
+const visionApiKey = Constants.expoConfig?.extra?.visionApiKey as string | undefined;
+
+if (!visionApiKey) {
+  console.warn(
+    "[Vision] API key tanımlı değil! .env ve app.config.js içindeki VISION_API_KEY'i kontrol et."
+  );
+}
+
+const VISION_URL = `https://vision.googleapis.com/v1/images:annotate?key=${visionApiKey}`;
 
 export type VisionBox = {
   id: string;
